@@ -1,0 +1,30 @@
+.resource-section {
+	.resource-section-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px solid var(--grey-shadow);
+		padding: 10px 5px;
+
+		.resource-section-header-title {
+			font-size: 1.2rem;
+			font-weight: bold;
+		}
+
+		.resource-section-header-option {
+			font-size: 0.7rem;
+			color: var(--grey-typography);
+			cursor: pointer;
+		}
+	}
+	.resource-section-content {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		@media only screen and (min-width: 768px) {
+			flex-direction: row;
+		}
+	}
+}

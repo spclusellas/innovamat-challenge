@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+
+import TalleresPage from './pages/TalleresPage/TalleresPage'
+import RinconesPage from './pages/RinconesPage/RinconesPage.jsx'
+import ResoruceDetailPage from './pages/ResourceDetailPage/ResoruceDetailPage'
+
+import { getRinconDetail } from './api/rincones'
+import { getTallerDetail } from './api/talleres'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path='/' element={<Navigate to='/talleres' />} />
+				<Route path='talleres' element={<TalleresPage />} />
+				<Route path='talleres/:id' element={<ResoruceDetailPage fetchFunction={getTallerDetail} />} />
+				<Route path='rincones' element={<RinconesPage />} />
+				<Route path='rincones/:id' element={<ResoruceDetailPage fetchFunction={getRinconDetail} />} />
+			</Routes>
+		</BrowserRouter>
+	)
 }
 
-export default App;
+export default App

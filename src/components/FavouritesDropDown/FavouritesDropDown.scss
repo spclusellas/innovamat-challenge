@@ -1,0 +1,33 @@
+.view-favourites {
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	span {
+		margin-left: 3px;
+		font-size: 0.8rem;
+		color: var(--green-active);
+	}
+	.favourites-drop-down-list {
+		position: absolute;
+		width: 240px;
+		height: 370px;
+		display: flex;
+		flex-direction: column;
+		overflow-y: scroll;
+		box-sizing: content-box;
+		padding: 10px;
+		background-color: white;
+		top: 55px;
+		right: 20px;
+		z-index: 5;
+		border: 1px solid var(--grey-shadow);
+		border-radius: 15px;
+		.group-title {
+			font-weight: bold;
+			margin: 3px 0px;
+		}
+		@media only screen and (min-width: 768px) {
+			top: 120px;
+		}
+	}
+}

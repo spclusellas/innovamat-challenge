@@ -1,0 +1,15 @@
+.resource-layout {
+	.resource-layout-header {
+		display: flex;
+		justify-content: space-between;
+		margin: 5px 0px 10px 0px;
+
+		.resource-layout-title {
+			font-weight: bold;
+			font-size: 1.5rem;
+		}
+	}
+	@media only screen and (min-width: 768px) {
+		margin-top: 75px;
+	}
+}

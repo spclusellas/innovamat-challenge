@@ -1,0 +1,27 @@
+.drop-down-list-card {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 3px;
+	margin: 2px 0px;
+	border-bottom: 1px solid var(--grey-shadow);
+	.card-img {
+		width: 30%;
+		cursor: pointer;
+		img {
+			width: 100%;
+		}
+	}
+	.card-title {
+		width: 35%;
+		font-size: 0.8rem;
+		color: var(--grey-typography);
+	}
+	.card-opt {
+		display: flex;
+		justify-content: flex-end;
+		width: 15%;
+		cursor: pointer;
+	}
+}

@@ -1,0 +1,25 @@
+.favourite-toggler {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+	padding: 10px;
+	cursor: pointer;
+	color: var(--grey-typography);
+	fill: var(--grey-typography);
+	stroke: var(--grey-typography);
+	font-size: 0.8rem;
+	.fav-icon {
+		font-size: 0.7rem;
+		margin-right: 3px;
+	}
+	:hover {
+		color: var(--green-active);
+		stroke: var(--green-active);
+		fill: var(--green-active);
+	}
+	&.is-fav {
+		color: var(--green-active);
+		fill: var(--green-active);
+		stroke: var(--green-active);
+	}
+}
