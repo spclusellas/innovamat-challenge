@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { fetchRincones } from '../../store/slices/rinconesSlice'
@@ -15,7 +15,7 @@ const RinconesPage = () => {
 		if (status === 'idle') {
 			dispatch(fetchRincones())
 		}
-	}, [])
+	}, [dispatch, status])
 	return (
 		<Layout>{status === 'loading' ? <LoadingSpinner /> : <ResourceLayout data={rincones} title='Rincones' />}</Layout>
 	)

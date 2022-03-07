@@ -15,7 +15,7 @@ const TalleresPage = () => {
 		if (status === 'idle') {
 			dispatch(fetchTalleres())
 		}
-	}, [])
+	}, [dispatch, status])
 
 	return (
 		<Layout>{status === 'loading' ? <LoadingSpinner /> : <ResourceLayout data={talleres} title='Talleres' />}</Layout>
