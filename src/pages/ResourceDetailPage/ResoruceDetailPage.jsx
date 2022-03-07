@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { useParams } from 'react-router-dom'
 
 import ResourceDetailLayout from '../../components/ResourceDetailLayout/ResourceDetailLayout'
@@ -9,19 +9,20 @@ const ResoruceDetailPage = ({ fetchFunction }) => {
 
 	const { id } = useParams
 
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				setLoading(true)
-				const data = await fetchFunction(id)
-				setResource(data)
-				setLoading(false)
-			} catch (error) {
-				setLoading(false)
-				console.error(error)
-			}
+	const fetchMyAPI = useCallback(async () => {
+		try {
+			setLoading(true)
+			const data = await fetchFunction(id)
+			setResource(data)
+			setLoading(false)
+		} catch (error) {
+			setLoading(false)
+			console.error(error)
 		}
-		fetchData()
+	}, [])
+
+	useEffect(() => {
+		fetchMyAPI()
 	}, [])
 
 	return <React.Fragment>{loading ? <LoadingSpinner /> : <ResourceDetailLayout resource={resource} />}</React.Fragment>

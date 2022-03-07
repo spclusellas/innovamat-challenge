@@ -17,7 +17,7 @@ const showFavCards = favs => {
 				<div>
 					<span className='group-title'>Rincones</span>
 					{Rincones?.map(f => (
-						<FavouriteResourceCard key={f.idf} fav={f} />
+						<FavouriteResourceCard key={f.uuid} fav={f} />
 					))}
 				</div>
 			) : (
@@ -27,7 +27,7 @@ const showFavCards = favs => {
 				<div>
 					<span className='group-title'>Talleres</span>
 					{Talleres?.map(f => (
-						<FavouriteResourceCard key={f.idf} fav={f} />
+						<FavouriteResourceCard key={f.uuid} fav={f} />
 					))}
 				</div>
 			) : (
