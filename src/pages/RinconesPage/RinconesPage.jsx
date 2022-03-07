@@ -16,7 +16,6 @@ const RinconesPage = () => {
 			dispatch(fetchRincones())
 		}
 	}, [])
-	console.log(rincones)
 	return (
 		<Layout>{status === 'loading' ? <LoadingSpinner /> : <ResourceLayout data={rincones} title='Rincones' />}</Layout>
 	)

@@ -21,7 +21,6 @@ const ResoruceDetailPage = ({ fetchFunction }) => {
 				console.error(error)
 			}
 		}
-		console.log(loading)
 		fetchData()
 	}, [])
 

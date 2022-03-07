@@ -6,7 +6,7 @@ export const fetchTalleres = createAsyncThunk(
 	async (payload, { dispatch, rejectWithValue }) => {
 		try {
 			const talleres = await getTalleres()
-			console.log(talleres)
+
 			return talleres
 		} catch (err) {
 			if (!err.response) {
@@ -32,7 +32,6 @@ const talleresSlice = createSlice({
 		},
 		[fetchTalleres.fulfilled]: (state, action) => {
 			state.status = 'success'
-			console.log(action)
 			state.talleres = action.payload
 		},
 		[fetchTalleres.rejected]: (state, action) => {
